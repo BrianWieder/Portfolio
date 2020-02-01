@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <span class="fill-remaining"></span>
+  <div>
+    <ul class="navigation-items">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="">
+          Home
+          <div></div>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/about">
+          About
+          <div></div>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/courses">
+          Courses
+          <div></div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <span class="fill-remaining"></span>
+</mat-toolbar>

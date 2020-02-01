@@ -1,0 +1,43 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.navigation-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+.navigation-items > li {
+  float: left;
+  margin: 0 1em;
+}
+
+.fill-remaining {
+  flex: 1 1 auto;
+}
+
+.navigation-items > li > a > div {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  opacity: 0%;
+}
+
+.navigation-items > li > a:hover > div {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  opacity: 25%;
+}
+
+.navigation-items > li.active > a > div {
+  opacity: 90%;
+}

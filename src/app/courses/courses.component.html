@@ -1,0 +1,33 @@
+<h1>Courses</h1>
+<mat-tab-group [dynamicHeight]="true" mat-align-tabs="center">
+  <mat-tab *ngFor="let subject of subjects" label="{{ subject.name }}" dyn>
+    <div class="container">
+      <mat-card *ngFor="let course of subject.courses">
+        <mat-card-title>{{ course.name }}</mat-card-title>
+        <mat-card-subtitle>{{ course.course }}</mat-card-subtitle>
+        <mat-card-content>
+          <h3>{{ course.completionDate }}</h3>
+          <p>Grade: {{ course.inProgress ? "Loading" : course.grade }}</p>
+          <mat-progress-bar
+            mode="indeterminate"
+            *ngIf="course.inProgress"
+          ></mat-progress-bar>
+        </mat-card-content>
+        <mat-card-content>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>Description</mat-expansion-panel-header>
+            <mat-list>
+              <mat-list-item *ngIf="course.subject === 'CS'"
+                >Programming Language -
+                {{ course.programmingLanguage }}</mat-list-item
+              >
+              <mat-list-item *ngFor="let desc of course.description">
+                {{ desc }}
+              </mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>
