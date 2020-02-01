@@ -7,4 +7,5 @@ export default class Course {
   inProgress: boolean;
   grade: string | null;
   completionDate: string;
+  id: string;
 }

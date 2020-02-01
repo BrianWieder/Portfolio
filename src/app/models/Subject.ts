@@ -1,6 +1,8 @@
-import Course from "./course";
+import Course from "./Course";
+import { Observable } from "rxjs";
 
 export default class Subject {
   name: string;
-  courses: Course[];
+  courses: Observable<Course[]>;
+  id: string;
 }

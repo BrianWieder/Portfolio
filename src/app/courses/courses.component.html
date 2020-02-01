@@ -1,8 +1,15 @@
 <h1>Courses</h1>
 <mat-tab-group [dynamicHeight]="true" mat-align-tabs="center">
-  <mat-tab *ngFor="let subject of subjects" label="{{ subject.name }}" dyn>
+  <mat-tab
+    *ngFor="let subject of subjects | async"
+    label="{{ subject.name }}"
+    dyn
+  >
     <div class="container">
-      <mat-card *ngFor="let course of subject.courses">
+      <mat-card
+        *ngFor="let course of subject.courses | async"
+        class="course-card"
+      >
         <mat-card-title>{{ course.name }}</mat-card-title>
         <mat-card-subtitle>{{ course.course }}</mat-card-subtitle>
         <mat-card-content>
